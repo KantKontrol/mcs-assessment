@@ -1,6 +1,7 @@
 import React from "react";
 import ExampleInput from "../ExampleInput";
 import ExampleDropdown from "../ExampleDropdown";
+import Toggle from "../Toggle";
 
 const Row = ({
   pointNumber,
@@ -16,7 +17,12 @@ const Row = ({
   disabled,
 }) => {
   return (
-    <tr style={{ backgroundColor: disabled ? "yellow" : "gray" }}>
+    <tr
+      style={{
+        backgroundColor: disabled ? "yellow" : "gray",
+        lineHeight: "15px",
+      }}
+    >
       <td>{pointNumber}</td>
       <td>
         <ExampleInput
@@ -81,7 +87,15 @@ const Row = ({
           disabled={disabled}
         />
       </td>
-      <td>toggle</td>
+      <td>
+        <Toggle
+          name="manual"
+          value={manual}
+          pointNumber={pointNumber}
+          onFieldUpdate={onFieldUpdate}
+          disabled={disabled}
+        />
+      </td>
     </tr>
   );
 };
