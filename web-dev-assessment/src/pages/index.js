@@ -32,7 +32,7 @@ export default function Home() {
       rowGen.push({
         pointNumber: i + 1,
         name: "defaultName",
-        displayType: "exampleDisplay",
+        displayType: "exampleoption1",
         offset: "0",
         manualValue: "0",
         displayText: "Not Used",
@@ -66,6 +66,18 @@ export default function Home() {
     }
   };
 
+  const onFieldUpdate = (index, field, value) => {
+    setRows(
+      rows.map((row) => {
+        if (row.pointNumber === index) {
+          return { ...row, [field]: value };
+        } else {
+          return row;
+        }
+      })
+    );
+  };
+
   return (
     <div style={{ height: "100vh" }}>
       <SICounter
@@ -74,9 +86,34 @@ export default function Home() {
       />
       <Table headers={HEADERS}>
         {rows
-          ? rows.map((row) => (
-              <Row key={row.pointNumber} pointNumber={row.pointNumber} disabled={row.pointNumber > siAmount} />
-            ))
+          ? rows.map(
+              ({
+                pointNumber,
+                name,
+                displayType,
+                offset,
+                manualValue,
+                displayText,
+                temp,
+                humd,
+                manual,
+              }) => (
+                <Row
+                  key={pointNumber}
+                  pointNumber={pointNumber}
+                  name={name}
+                  displayType={displayType}
+                  offset={offset}
+                  manualValue={manualValue}
+                  displayText={displayText}
+                  temp={temp}
+                  humd={humd}
+                  manual={manual}
+                  disabled={pointNumber > siAmount}
+                  onFieldUpdate={onFieldUpdate}
+                />
+              )
+            )
           : null}
       </Table>
     </div>
