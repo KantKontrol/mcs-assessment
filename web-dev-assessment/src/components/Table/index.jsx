@@ -2,7 +2,7 @@ import React from "react";
 
 const Table = ({ headers, ...props }) => {
   return (
-    <table>
+    <table style={{ borderSpacing: "5px 5px" }}>
       <thead>
         <tr>
           {headers.map((header) => (
