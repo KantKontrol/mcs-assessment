@@ -2,7 +2,7 @@ import React from "react";
 
 const Row = ({ pointNumber, onDataUpdate, disabled }) => {
   return (
-    <tr>
+    <tr style={{ backgroundColor: disabled ? "yellow" : "gray" }}>
       <td>{pointNumber}</td>
       <td>
         <input
