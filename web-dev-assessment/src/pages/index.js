@@ -38,7 +38,7 @@ export default function Home() {
         displayText: "Not Used",
         temp: "Not Used",
         humd: "Not Used",
-        manual: false,
+        manual: true,
       });
     }
 
