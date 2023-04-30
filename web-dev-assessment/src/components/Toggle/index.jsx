@@ -2,17 +2,27 @@ import React from "react";
 
 const Toggle = ({ name, value, onFieldUpdate, pointNumber, disabled }) => {
   return (
-    <div
-      style={{ backgroundColor: disabled ? "yellow" : value ? "white" : "red" }}
+    <span
+      style={{
+        backgroundColor: disabled ? "yellow" : value ? "lightgray" : "red",
+        display: "flex",
+        width: "100%",
+        height: "30px",
+        border: "none",
+        alignItems: "center",
+      }}
     >
-      <span>{value ? "Auto" : "Manual OFF"}</span>
+      <p style={{ flex: 3, textAlign: "center" }}>
+        {value ? "Auto" : "Manual OFF"}
+      </p>
       <button
+        style={{ flex: 1, height: "100%" }}
         disabled={disabled}
         onClick={() => onFieldUpdate(pointNumber, name, !value)}
       >
         ...
       </button>
-    </div>
+    </span>
   );
 };
 
