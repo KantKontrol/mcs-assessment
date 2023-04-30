@@ -6,14 +6,21 @@ const ExampleDropdown = ({
   onFieldUpdate,
   pointNumber,
   disabled,
+  ...props
 }) => {
   return (
     <select
       disabled={disabled}
-      style={{ backgroundColor: disabled ? "yellow" : "white" }}
+      style={{
+        backgroundColor: disabled ? "yellow" : "white",
+        width: "100%",
+        height: "30px",
+        border: "none",
+      }}
       name={name}
       value={value}
       onChange={({ target }) => onFieldUpdate(pointNumber, name, target.value)}
+      {...props}
     >
       <option value="exampleoption1">Example option 1</option>
       <option value="exampleoption2">Example option 2</option>
