@@ -6,14 +6,23 @@ const ExampleInput = ({
   onFieldUpdate,
   pointNumber,
   disabled,
+  textAlign,
+  ...props
 }) => {
   return (
     <input
       disabled={disabled}
-      style={{ backgroundColor: disabled ? "yellow" : "white" }}
+      style={{
+        backgroundColor: disabled ? "yellow" : "white",
+        width: "100%",
+        height: "30px",
+        border: "none",
+        textAlign: textAlign ? textAlign : "center",
+      }}
       name={name}
       value={value}
       onChange={({ target }) => onFieldUpdate(pointNumber, name, target.value)}
+      {...props}
     />
   );
 };
