@@ -19,11 +19,19 @@ const Row = ({
   return (
     <tr
       style={{
-        backgroundColor: disabled ? "yellow" : "gray",
+        backgroundColor: disabled ? "yellow" : "lightgray",
         lineHeight: "15px",
       }}
     >
-      <td>{pointNumber}</td>
+      <td
+        style={{
+          textAlign: "center",
+          fontWeight: "bold",
+          width: "10px !important",
+        }}
+      >
+        {pointNumber}
+      </td>
       <td>
         <ExampleInput
           name="name"
@@ -31,6 +39,7 @@ const Row = ({
           onFieldUpdate={onFieldUpdate}
           pointNumber={pointNumber}
           disabled={disabled}
+          textAlign="left"
         />
       </td>
       <td>
