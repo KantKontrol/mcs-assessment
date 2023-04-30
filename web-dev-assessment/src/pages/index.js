@@ -50,7 +50,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log(rows);
+    console.clear();
+    console.table(rows);
   }, [rows]);
 
   const adjustSensorAmount = (adjustType) => {
@@ -119,4 +120,3 @@ export default function Home() {
     </div>
   );
 }
-// rows.forEach((value, key) => <Row key={key} pointNumber={key} />
