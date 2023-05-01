@@ -1,0 +1,19 @@
+Answers
+
+
+1. 0x00
+2. 0
+3. 100
+4. RO_ON
+5. 
+????
+I was a bit confused on this question but I think this is what is implied
+
+Byte relay_outputs[2] = {RO_ON, RO_OFF};
+
+if(relay_output == relay_outputs[0]){
+    //code
+}
+
+6. address of control_mode
+7. 0x00
