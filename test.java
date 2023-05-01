@@ -1,10 +1,7 @@
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
-import java.util.Collections;
 
-public class test {
+public class Test {
 
 	public static int[] findIndices(int[] nums, int target) {
 
@@ -16,9 +13,9 @@ public class test {
 
 		for (int i = 0; i < nums.length; i++) {
 			int difference = target - nums[i];
-			int findDifference = numList.indexOf(difference);
-			if (findDifference != i && findDifference != -1) {
-				return new int[] { i, findDifference };
+			int indexOfDifference = numList.indexOf(difference);
+			if (indexOfDifference != i && indexOfDifference != -1) {
+				return new int[] { i, indexOfDifference };
 			}
 
 		}
